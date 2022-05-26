@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/_header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<header>
+    <a class="header-item header-title" href="/">
+        <h2>social geek</h2>
+    </a>
+    <div class="search-container">
+        <form action="/search" method="post">
+            <input type="text" placeholder="ara.." name="search" required onkeypress="return boslukEngelle()">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="nav-button">
+        <% if (!user) {%>
+            <a href="#" class="header-item header-box">rastgele</a>
+            <a href="/login" class="header-item header-box">giriş</a>
+            <a href="/register" class="header-item header-box">kayıt</a>
+            <% } else { %>
+                <a href="#" class="header-item header-box">rastgele</a>
+                <a href="/logout" class="header-item header-box">çıkış</a>
+                <%}%>
+    </div>
+</header>
+
+<script>
+    function boslukEngelle() {
+        if (event.keyCode == 32) {
+            return false;
+        }
+    }
+</script>

@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace, 'JetBrains Mono';
+    background-color: #2D2D2D;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}

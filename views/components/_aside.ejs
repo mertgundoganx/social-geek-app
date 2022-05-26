@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/_aside.css">
+<aside>
+    <div class="container-news">
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Node.js version 14 available now</button>
+                </div>
+                <div class="news-channel-title">
+                    nodejs
+                </div>
+            </div>
+            <div class="news-content">
+                <p>We’re excited to announce that Node.js 14 was released today! The highlights in this release include
+                    improved
+                    diagnostics, an upgrade of V8, an experimental Async Local Storage API, hardening of the streams
+                    APIs,
+                    removal of the Experimental Modules warning, and the removal of some long deprecated APIs. <a
+                        href="/register">daha fazla oku</a></p>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Java 17 released with updates to LTS schedule</button>
+                </div>
+                <div class="news-channel-title">
+                    java
+                </div>
+            </div>
+            <div class="news-content">
+                <p>The latest release of Java is now available. Java 17 is a long-term support (LTS) release, the last
+                    of which
+                    was Java 11. According to Oracle, over 70 JDK Enhancement Proposals (JEPs) have been added to the
+                    language
+                    since Java 11. <a href="/register">daha fazla oku</a></p>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Go 1.18 released as biggest update to language
+                        yet</button>
+                </div>
+                <div class="news-channel-title">
+                    golang
+                </div>
+            </div>
+            <div class="news-content">
+                <p>The Go development team has announced that the 1.18 release of the language is here. According to the
+                    team,
+                    this release is the biggest change to the language to-date. <a href="/register">daha fazla oku</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Node.js version 14 available now</button>
+                </div>
+                <div class="news-channel-title">
+                    nodejs
+                </div>
+            </div>
+            <div class="news-content">
+                <p>We’re excited to announce that Node.js 14 was released today! The highlights in this release include
+                    improved
+                    diagnostics, an upgrade of V8, an experimental Async Local Storage API, hardening of the streams
+                    APIs,
+                    removal of the Experimental Modules warning, and the removal of some long deprecated APIs. <a
+                        href="/register">daha fazla oku</a></p>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Java 17 released with updates to LTS schedule</button>
+                </div>
+                <div class="news-channel-title">
+                    java
+                </div>
+            </div>
+            <div class="news-content">
+                <p>The latest release of Java is now available. Java 17 is a long-term support (LTS) release, the last
+                    of which
+                    was Java 11. According to Oracle, over 70 JDK Enhancement Proposals (JEPs) have been added to the
+                    language
+                    since Java 11. <a href="/register">daha fazla oku</a></p>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-head">
+                <div class="news-title">
+                    <button class="news-item-button">Go 1.18 released as biggest update to language
+                        yet</button>
+                </div>
+                <div class="news-channel-title">
+                    golang
+                </div>
+            </div>
+            <div class="news-content">
+                <p>The Go development team has announced that the 1.18 release of the language is here. According to the
+                    team,
+                    this release is the biggest change to the language to-date. <a href="/register">daha fazla oku</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+<script>
+    var item = document.getElementsByClassName("news-head");
+    for (var i = 0; i < item.length; i++) {
+        item[i].addEventListener("click", function () {
+            var currentContent = this.nextElementSibling;
+            if (currentContent.style.display === "block") {
+                currentContent.style.display = "none";
+            } else {
+                currentContent.style.display = "block";
+            }
+        });
+    }
+</script>
