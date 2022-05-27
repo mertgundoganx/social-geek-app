@@ -2,8 +2,7 @@
 const Geek = require("../models/Geek");
 const Channel = require("../models/Channel");
 const createGeekPost = (req, res) => {
-    /*let channelColor = Channel.find({ });
-    console.log(channelColor);*/
+
     try {
         let geek = new Geek({
             title: req.body.title,
@@ -15,23 +14,8 @@ const createGeekPost = (req, res) => {
             likes: [],
         });
 
-        /*let channel = new Channel({
-            name: "kotlin",
-            color: "#FFA500"
-        });
-
-
-        channel.save((err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(result);
-            }
-        });*/
-
         geek.save((err, result) => {
             if (err) throw err;
-            //console.log(result);
             res.redirect('/');
         });
     } catch (error) {
