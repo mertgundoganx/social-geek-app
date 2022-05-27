@@ -10,6 +10,7 @@ const createGeekRoute = require('./routes/createGeekRoute');
 const geekRoute = require('./routes/geekRoute');
 const randomGeekRoute = require('./routes/randomGeekRoute');
 const accountRoute = require('./routes/accountRoute');
+const searchRoute = require('./routes/searchRoute');
 const { checkUser, loadGeeks , getGeek} = require('./middleware/authMiddleware');
 require('dotenv/config');
 
@@ -29,7 +30,7 @@ app.use('*', checkUser);
 app.use('/', loadGeeks);
 app.use('/randomGeek', loadGeeks);
 
-app.use(indexRoute, loginRoute, registerRoute, logoutRoute, createGeekRoute, geekRoute, randomGeekRoute, accountRoute);
+app.use(indexRoute, loginRoute, registerRoute, logoutRoute, createGeekRoute, geekRoute, randomGeekRoute, accountRoute, searchRoute);
 
 app.listen(port, () => {
     console.log(`App running on port: ${port}.`);

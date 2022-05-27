@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>social geek</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/_nav.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Header-->
+    <%- include('./components/_header'); -%>
+        <div class="container">
+            <!--Nav-->
+            <div id="container" class="nav">
+
+            </div>
+            <!--Aside-->
+            <div class="aside">
+                <%- include('./components/_aside'); -%>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+
+const container = document.getElementById('container');
+
+let geeks = <%- JSON.stringify(geeks) %>;
+
+for (var i = geeks.length-1; i > -1; i--) {
+    container.innerHTML += `
+        <div class="geek-item" onclick="goToGeek(${i})">
+            <div class="geek-head">
+                <div class="geek-title">
+                    <h3>${geeks[i].title}</h3>
+                </div>
+                <div class="geek-channel-title title-kotlin">${geeks[i].channel}    
+                </div>
+            </div>
+
+            <div class="geek-description">
+                <p>${geeks[i].description}</p>
+            </div>
+
+            <div class="geek-bottom-bar">
+                <button class="button geek-comments">yorumlar</button>
+                <button class="button geek-love">bir yıldız ver</button>
+                <button class="button geek-report">şikayet</button>
+            </div>
+        </div>
+    `;
+}
+
+function goToGeek(i) {
+    window.location.href = `/geek/${geeks[i]._id}`;
+}
+
+</script>
