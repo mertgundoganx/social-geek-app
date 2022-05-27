@@ -49,4 +49,18 @@ const loadGeeks = async (req, res, next) => {
     }
 };
 
-module.exports = { requireAuth, checkUser, loadGeeks };
+const getGeek = async (req, res, next) => {
+    let id = req.params.geekId;
+    console.log(id);
+    try {
+        Geek.findById(id, (err, geek) => {
+            if (err) throw err;
+            res.locals.geek = geek;
+            console.log(geek);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+module.exports = { requireAuth, checkUser, loadGeeks, getGeek };

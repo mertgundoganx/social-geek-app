@@ -7,7 +7,9 @@ const loginRoute = require('./routes/loginRoute');
 const registerRoute = require('./routes/registerRoute');
 const logoutRoute = require('./routes/logoutRoute');
 const createGeekRoute = require('./routes/createGeekRoute');
-const { checkUser, loadGeeks } = require('./middleware/authMiddleware');
+const geekRoute = require('./routes/geekRoute');
+const randomGeekRoute = require('./routes/randomGeekRoute');
+const { checkUser, loadGeeks , getGeek} = require('./middleware/authMiddleware');
 require('dotenv/config');
 
 const app = express();
@@ -24,7 +26,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('*', checkUser);
 app.use('/', loadGeeks);
-app.use(indexRoute, loginRoute, registerRoute, logoutRoute, createGeekRoute);
+
+app.use(indexRoute, loginRoute, registerRoute, logoutRoute, createGeekRoute, geekRoute, randomGeekRoute);
 
 app.listen(port, () => {
     console.log(`App running on port: ${port}.`);
