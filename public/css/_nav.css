@@ -27,24 +27,8 @@
 .geek-channel-title {
     width: 10%;
     text-align: end;
-    /*color: #ff4500;*/
-    font-size: small;
-}
-
-.title-node {
-    color: green;
-}
-
-.title-java {
     color: #ff4500;
-}
-
-.title-golang {
-    color: skyblue;
-}
-
-.title-kotlin {
-    color: purple;
+    font-size: small;
 }
 
 .geek-description {

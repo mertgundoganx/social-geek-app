@@ -11,6 +11,10 @@ header {
     text-decoration: none;
 }
 
+.header-item:hover {
+    cursor: pointer;
+}
+
 .header-title {
     margin-right: auto;
 }
@@ -49,4 +53,73 @@ header {
 .search-container button:hover {
     background-color: #212121;
     cursor: pointer;
+}
+
+#geek-box {
+    width: 50%;
+    height: 70%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.form {
+    padding: 40px;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+}
+
+.form-input {
+    border: 1px solid white;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    outline: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-description{
+    height: 150px;
+}
+
+.form-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.form-close:hover {
+    cursor: pointer;
+}
+
+.form-button {
+    background-color: #2D2D2D;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.form-button:hover {
+    background-color: #212121;
+    cursor: pointer;
+}
+
+.form-item-text {
+    font-size: small;
+    color: white;
+    margin-top: 1rem;
+}
+
+.form-item-text a {
+    text-decoration: none;
+    color: white;
 }

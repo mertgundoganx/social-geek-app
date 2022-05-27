@@ -1,103 +1,38 @@
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/_nav.css">
 <nav>
-    <div class="container-geek">
-
-        <div class="geek-item">
-            <div class="geek-head">
-                <div class="geek-title">
-                    <h3>Node.js version 14 available now</h3>
-                </div>
-                <div class="geek-channel-title title-node">
-                    nodejs
-                </div>
-            </div>
-            <div class="geek-description">
-                <p>We’re excited to announce that Node.js 14 was released today! The highlights in this release include
-                    improved diagnostics, an upgrade of V8, an experimental Async Local Storage API, hardening of the
-                    streams APIs, removal of the Experimental Modules warning, and the removal of some long deprecated
-                    APIs.
-                </p>
-            </div>
-            <div class="geek-bottom-bar">
-                <button class="button geek-comments">yorumlar</button>
-                <button class="button geek-love">bir yıldız ver</button>
-                <button class="button geek-report">şikayet</button>
-            </div>
-        </div>
-
-        <div class="geek-item">
-            <div class="geek-head">
-                <div class="geek-title">
-                    <h3>Java 17 released with updates to LTS schedule</h3>
-                </div>
-                <div class="geek-channel-title title-java">
-                    java
-                </div>
-            </div>
-            <div class="geek-description">
-                <p>The latest release of Java is now available. Java 17 is a long-term support (LTS) release, the last
-                    of which was Java 11. According to Oracle, over 70 JDK Enhancement Proposals (JEPs) have been added
-                    to the language since Java 11.
-                </p>
-            </div>
-            <div class="geek-bottom-bar">
-                <button class="button geek-comments">yorumlar</button>
-                <button class="button geek-love geek-love-active">bir yıldız ver</button>
-                <button class="button geek-report">şikayet</button>
-            </div>
-        </div>
-
-        <div class="geek-item">
-            <div class="geek-head">
-                <div class="geek-title">
-                    <h3>Go 1.18 released as biggest update to language yet</h3>
-                </div>
-                <div class="geek-channel-title title-golang">
-                    golang
-                </div>
-            </div>
-            <div class="geek-description">
-                <p>The Go development team has announced that the 1.18 release of the language is here. According to the
-                    team, this release is the biggest change to the language to-date.
-                </p>
-            </div>
-            <div class="geek-bottom-bar">
-                <button class="button geek-comments">yorumlar</button>
-                <button class="button geek-love">bir yıldız ver</button>
-                <button class="button geek-report">şikayet</button>
-            </div>
-        </div>
-
-        <div class="geek-item">
-            <div class="geek-head">
-                <div class="geek-title">
-                    <h3>Is functional programming a good paradigm to use for Kotlin development? Check out this guide I
-                        wrote for direct coding comparisons between functional programming and imperative programming
-                        using
-                        DoorDash engineering examples</h3>
-                </div>
-                <div class="geek-channel-title title-kotlin">
-                    kotlin
-                </div>
-            </div>
-            <div class="geek-description">
-                <p>When DoorDash moved from a monolith to microservices my team was looking for ways of making our code
-                    cleaner and more reliable. One of the easiest low-hanging fruits was to use functional programming
-                    instead of imperative programming when using Kotlin for writing backend services. I thought I would
-                    share some of these experiences with the developer community and wrote this guide "How to leverage
-                    functional programming in Kotlin to write better, cleaner code" that explains: The differences
-                    between FP and imperative programming and how to code different use-cases in Koltin with FP vs
-                    Imperative. Let me know what you think. Is Kotlin a good language for functional programming? Should
-                    we adopt functional programming more?
-                </p>
-            </div>
-            <div class="geek-bottom-bar">
-                <button class="button geek-comments">yorumlar</button>
-                <button class="button geek-love">bir yıldız ver</button>
-                <button class="button geek-report">şikayet</button>
-            </div>
-        </div>
-
+    <div id="container" class="container-geek">
     </div>
 </nav>
+
+<script>
+
+    const container = document.getElementById('container');
+
+    let geeks = <%- JSON.stringify(geeks) %>;
+
+    for (var i = geeks.length-1; i > -1; i--) {
+        container.innerHTML += `
+            <div class="geek-item">
+                <div class="geek-head">
+                    <div class="geek-title">
+                        <h3>${geeks[i].title}</h3>
+                    </div>
+                    <div class="geek-channel-title title-kotlin">${geeks[i].channel}    
+                    </div>
+                </div>
+
+                <div class="geek-description">
+                    <p>${geeks[i].description}</p>
+                </div>
+
+                <div class="geek-bottom-bar">
+                    <button class="button geek-comments">yorumlar</button>
+                    <button class="button geek-love">bir yıldız ver</button>
+                    <button class="button geek-report">şikayet</button>
+                </div>
+            </div>
+        `;
+    }
+
+</script>

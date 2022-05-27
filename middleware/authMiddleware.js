@@ -1,6 +1,7 @@
 'use strict';
 const jwt = require('jsonwebtoken');
 const User = require("../models/User");
+const Geek = require("../models/Geek");
 
 const requireAuth = (req, res, next) => {
     const token = req.cookies.jwt;
@@ -38,4 +39,14 @@ const checkUser = (req, res, next) => {
     }
 };
 
-module.exports = { requireAuth, checkUser };
+const loadGeeks = async (req, res, next) => {
+    try {
+        let geeks = await Geek.find({});
+        res.locals.geeks = geeks;
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+module.exports = { requireAuth, checkUser, loadGeeks };

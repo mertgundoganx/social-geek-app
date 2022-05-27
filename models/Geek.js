@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 
-const postSchema = new mongoose.Schema({
+const geekSchema = new mongoose.Schema({
     "title": { type: String, required: true, lowercase: true },
     "channel": { type: String, required: true, lowercase: true, },
     "description": { type: String, required: true, lowercase: true },
@@ -11,12 +11,6 @@ const postSchema = new mongoose.Schema({
     "likes": [{ type: String, required: true, lowercase: true }],
 });
 
-postSchema.pre('save', async function (next) {
-    const salt = await bcrypt.genSalt();
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-}, { collection: 'users', timestamps: true });
+const geek = mongoose.model('geek', geekSchema);
 
-const post = mongoose.model('post', postSchema);
-
-module.exports = post;
+module.exports = geek;

@@ -17,16 +17,44 @@
             <a href="/login" class="header-item header-box">giriş</a>
             <a href="/register" class="header-item header-box">kayıt</a>
             <% } else { %>
+                <a class="header-item header-box" onclick="openBox()">geek</a>
                 <a href="#" class="header-item header-box">rastgele</a>
+                <a href="/account" class="header-item header-box">hesap</a>
                 <a href="/logout" class="header-item header-box">çıkış</a>
                 <%}%>
     </div>
 </header>
 
+<div id="geek-box" style="display: none;">
+    <form class="form" action="createGeek" method="post">
+        <div class="form-close" onclick="openBox()">x</div>
+        <div class="form-header">
+            <h2>Yeni Geek Oluştur</h2>
+        </div>
+        <div class="form-item"><input type="text" class="form-input" name="title" placeholder="title"
+                requiredminlength="8"></div>
+        <div class="form-item"><input type="text" class="form-input" name="channel" placeholder="channel" required>
+        </div>
+        <div class="form-item "><input type="text" class="form-input form-description" name="description"
+                placeholder="description" required></div>
+        <div class="form-item"><button class="form-button" type="submit">geek</button></div>
+    </form>
+</div>
+</div>
+
 <script>
     function boslukEngelle() {
         if (event.keyCode == 32) {
             return false;
+        }
+    }
+
+    function openBox() {
+        let box = document.getElementById("geek-box");
+        if (box.style.display === "none") {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
         }
     }
 </script>
