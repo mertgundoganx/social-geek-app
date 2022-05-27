@@ -34,23 +34,32 @@
 
 <script>
 
-const container = document.getElementById('container');
+    const container = document.getElementById('container');
 
-let geeks = <%- JSON.stringify(geeks) %>;
+    let geeks = <%- JSON.stringify(geeks) %>;
 
-for (var i = geeks.length-1; i > -1; i--) {
-    container.innerHTML += `
+    let array = [];
+    let searchText = '<%- JSON.stringify(searchTextt) %>';
+
+    for (var i = 0; i < geeks.length; i++) {
+        if (searchText.includes(geeks[i].channel)) {
+            array.push(geeks[i]);
+        } 
+    }
+
+    for (var i = array.length - 1; i > -1; i--) {
+        container.innerHTML += `
         <div class="geek-item" onclick="goToGeek(${i})">
             <div class="geek-head">
                 <div class="geek-title">
-                    <h3>${geeks[i].title}</h3>
+                    <h3>${array[i].title}</h3>
                 </div>
-                <div class="geek-channel-title title-kotlin">${geeks[i].channel}    
+                <div class="geek-channel-title title-kotlin">${array[i].channel}    
                 </div>
             </div>
 
             <div class="geek-description">
-                <p>${geeks[i].description}</p>
+                <p>${array[i].description}</p>
             </div>
 
             <div class="geek-bottom-bar">
@@ -60,10 +69,10 @@ for (var i = geeks.length-1; i > -1; i--) {
             </div>
         </div>
     `;
-}
+    }
 
-function goToGeek(i) {
-    window.location.href = `/geek/${geeks[i]._id}`;
-}
+    function goToGeek(i) {
+        window.location.href = `/geek/${array[i]._id}`;
+    }
 
 </script>

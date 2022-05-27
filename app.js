@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.use('*', checkUser);
 app.use('/', loadGeeks);
 app.use('/randomGeek', loadGeeks);
+app.use('/search', loadGeeks);
 
 app.use(indexRoute, loginRoute, registerRoute, logoutRoute, createGeekRoute, geekRoute, randomGeekRoute, accountRoute, searchRoute);
 
